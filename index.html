@@ -174,9 +174,14 @@ header{backdrop-filter:none !important;background:rgba(26,26,26,.96) !important}
 .fan-title{font-family:'Unbounded',sans-serif;font-size:24px;line-height:1.15}
 .fan-text{color:#C9C5BD;font-size:16px;line-height:1.5}
 .fan-card:focus-visible{outline:3px solid var(--acc);outline-offset:4px}
-.fan-dots{display:flex;gap:8px}
-.fan-dots span{width:8px;height:8px;border-radius:999px;background:#4A4A44;transition:all .4s}
-.fan-dots span.on{width:26px;background:var(--acc)}
+.fan{touch-action:pan-y}
+.fan-nav{display:flex;align-items:center;gap:6px}
+.fan-dots{display:flex}
+.fan-dot{width:30px;height:44px;border:0;padding:0;background:none;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.fan-dot span{width:8px;height:8px;border-radius:999px;background:#4A4A44;transition:all .4s}
+.fan-dot.on span{width:26px;background:var(--acc)}
+.fan-arrow{width:44px;height:44px;border-radius:50%;border:1px solid #363632;background:rgba(36,36,34,.8);color:#FFFDF4;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.fan-arrow:hover{background:var(--acc);color:#1A1A1A}
 @media (max-width:760px){
 .fan{height:420px}
 .fan-card{width:260px;margin-left:-130px;height:360px;transform:translateX(calc(var(--o) * 40px)) translateY(calc(var(--a) * 12px)) rotate(calc(var(--o) * 4deg)) scale(.88)}
@@ -324,6 +329,55 @@ header{backdrop-filter:none !important;background:rgba(26,26,26,.96) !important}
 .hero-h{font-size:48px !important}
 .h2{font-size:34px !important}
 }
+
+/* telefon: mai aerisit, mai mic */
+@media (max-width:760px){
+section{padding-top:64px !important;padding-bottom:28px !important}
+#top{padding-top:56px !important;padding-bottom:48px !important;gap:20px !important}
+.hero-h{font-size:44px !important}
+.h2{font-size:30px !important;line-height:1.1 !important}
+h3.disp{font-size:24px !important}
+p{font-size:15.5px !important}
+.eyebrow{font-size:11px !important}
+.btn{min-height:48px;padding:0 20px;font-size:15px}
+.mq-track{font-size:18px !important}
+.hl{gap:12px;margin-top:10px}
+.hl-item{width:56px}
+.hl-ring{width:56px;height:56px;padding:2.5px}
+.hl-in svg{width:21px;height:21px}
+.hl-label{font-size:11px}
+.pola{width:165px}
+.pola-zone{min-height:330px}
+.pola-name{font-size:18px}
+#cum-lucram div[style*="padding: 40px"]{padding:22px !important;min-height:0 !important;gap:16px !important;border-radius:24px !important}
+.phase{padding:5px 10px;font-size:11.5px}
+#phases{gap:6px !important}
+.pola-note{font-size:20px}
+.reel{height:250px}
+.reel-cap{padding:12px}
+.worktabs .tab{padding:0 10px;font-size:13px}
+.tile{padding:18px;gap:8px}
+.tile strong{font-size:16px}
+.chat{padding:18px}
+.fan{height:330px;margin-top:0}
+.fan-card{width:220px;height:290px;margin-left:-110px;padding:20px;gap:10px;top:10px;transform:translateX(calc(var(--o) * 30px)) translateY(calc(var(--a) * 10px)) rotate(calc(var(--o) * 4deg)) scale(.86)}
+.fan-ic{width:42px;height:42px;border-radius:12px}
+.fan-num{font-size:30px}
+.fan-title{font-size:18px}
+.fan-text{font-size:14px}
+#stepcard h3{font-size:22px !important}
+#cum-lucram .disp[style*="64px"]{font-size:42px !important}
+.phase{padding:6px 12px;font-size:12px}
+.gift{padding:20px;gap:12px}
+.scene{height:270px}
+.qr{width:180px;height:180px}
+.bundle{padding:32px 16px;gap:24px}
+.bchip{padding:11px 16px;font-size:15px}
+.reason{padding:16px}
+#contact > div{padding-top:40px !important;padding-bottom:60px !important;gap:20px !important}
+#contact h2{font-size:40px !important}
+.endnote{margin-top:16px;font-size:14px !important}
+}
 </style>
 </head>
 <body>
@@ -438,10 +492,14 @@ header{backdrop-filter:none !important;background:rgba(26,26,26,.96) !important}
 <div class="fan" role="tablist" aria-label="Motive">
 
 </div>
-<div class="fan-dots" aria-hidden="true">
+<div class="fan-nav">
+<button class="fan-arrow" aria-label="Motivul anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"></path></svg></button>
+<div class="fan-dots">
 
 </div>
-<span style="font-size: 14px; color: #8A867F">Apăsați pe o carte ca s-o aduceți în față</span>
+<button class="fan-arrow" aria-label="Motivul următor"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
+</div>
+<span style="font-size: 14px; color: #8A867F">Apăsați pe o carte sau glisați ca s-o aduceți în față</span>
 </section>
 
 <!-- MUNCA NOASTRA -->
@@ -934,6 +992,14 @@ class Component extends DCLogic {
     });
     return {
       accent: this.props.accent ?? '#EFC23F',
+      whyPrev: function () { self.setState({ why: (self.state.why + 4) % 5, whyManual: true }); },
+      whyNext: function () { self.setState({ why: (self.state.why + 1) % 5, whyManual: true }); },
+      fanDown: function (e) { self._fx = e.clientX; },
+      fanUp: function (e) {
+        if (self._fx == null) return;
+        var dx = e.clientX - self._fx; self._fx = null;
+        if (Math.abs(dx) > 40) self.setState({ why: (self.state.why + (dx < 0 ? 1 : 4)) % 5, whyManual: true });
+      },
       whyRef: this._whyRef || (this._whyRef = function (el) { self._whyEl = el; }),
       whyCards: (function () {
         var W = [
@@ -950,6 +1016,7 @@ class Component extends DCLogic {
             n: '0' + (i + 1),
             cls: 'fan-card' + (o === 0 ? ' on' : ''),
             dot: o === 0 ? 'on' : '',
+            dotBtn: 'fan-dot' + (o === 0 ? ' on' : ''),
             selected: o === 0 ? 'true' : 'false',
             style: '--o: ' + o + '; --a: ' + Math.abs(o),
             pick: function () { self.setState({ why: i, whyManual: true }); }
@@ -1129,7 +1196,7 @@ class Component extends DCLogic {
     $('.fan').innerHTML = V.whyCards.map(function (c, i) {
       return '<button class="' + c.cls + '" style="' + c.style + '" role="tab" aria-selected="' + c.selected + '" data-why="' + i + '"><span class="fan-top"><span class="fan-ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="' + c.icon + '"></path></svg></span><span class="fan-num">' + c.n + '</span></span><strong class="fan-title">' + esc(c.title) + '</strong><span class="fan-text">' + esc(c.text) + '</span></button>';
     }).join('');
-    $('.fan-dots').innerHTML = V.whyCards.map(function (c) { return '<span class="' + c.dot + '"></span>'; }).join('');
+    $('.fan-dots').innerHTML = V.whyCards.map(function (c, i) { return '<button class="' + c.dotBtn + '" aria-label="Motivul ' + c.n + '" data-why="' + i + '"><span></span></button>'; }).join('');
 
     // „Cum lucrăm”
     $('#phases').innerHTML = V.phases.map(function (p) { return '<span class="' + p.cls + '">' + esc(p.label) + '</span>' + (p.arrow ? ARROW : ''); }).join('');
@@ -1166,6 +1233,12 @@ class Component extends DCLogic {
   V.rootRef(root); V.skyRef($('.sky')); V.cometRef($('.comet')); V.seeRef($('.seecur'));
   V.stepsRef($('#cum-lucram')); V.whyRef($('#de-ce-noi')); V.constRef(cst);
   V.olaRef($('#pola-o')); V.gabiRef($('#pola-g'));
+  var fan = $('.fan');
+  fan.addEventListener('pointerdown', function (e) { V.fanDown(e); });
+  fan.addEventListener('pointerup', function (e) { V.fanUp(e); });
+  var arrows = document.querySelectorAll('.fan-arrow');
+  arrows[0].addEventListener('click', function () { V.whyPrev(); });
+  arrows[1].addEventListener('click', function () { V.whyNext(); });
   root.addEventListener('mousemove', function (e) { V.onMove(e); });
   root.addEventListener('mouseleave', function () { V.onLeave(); });
   [['#pola-o', 'ola'], ['#pola-g', 'gabi']].forEach(function (p) {
