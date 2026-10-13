@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Finfluence · Filmăm. Postăm. Creștem.">
 <meta property="og:description" content="Video, foto și grafică pentru restaurante, cafenele, cluburi sportive și afaceri locale din Oradea.">
-<meta property="og:image" content="https://finfluencerom-arch.github.io/portofoliu-ff/og.jpg">
+<meta property="og:image" content="https://finfluencerom-arch.github.io/portofoliu-ff/og2.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://finfluencerom-arch.github.io/portofoliu-ff/">
@@ -174,7 +174,8 @@ header{backdrop-filter:none !important;background:rgba(26,26,26,.96) !important}
 @media (hover:hover){.reel-row,.reel-row *{cursor:none}}
 @media (hover:none){.seecur{display:none}}
 /* de ce noi: evantai */
-.fan{position:relative;width:100%;height:440px;margin-top:10px}
+.fan{position:relative;width:100%;height:440px;margin-top:10px;isolation:isolate;z-index:0}
+.pola-zone,.reel-row,.pgrid,.scene{isolation:isolate}
 .fan-card{--o:0;position:absolute;left:50%;top:20px;width:300px;height:380px;margin-left:-150px;box-sizing:border-box;padding:28px;border-radius:28px;border:1px solid #363632;background:#242422;color:#FFFDF4;font:inherit;text-align:left;display:flex;flex-direction:column;gap:14px;cursor:pointer;transform-origin:50% 140%;transform:translateX(calc(var(--o) * 118px)) translateY(calc(var(--a) * 16px)) rotate(calc(var(--o) * 5deg)) scale(.9);z-index:calc(10 - var(--a));transition:transform .65s cubic-bezier(.2,.9,.3,1.1),border-color .4s,background .4s,box-shadow .4s,filter .4s;filter:brightness(calc(1 - var(--a) * .14));box-shadow:0 20px 50px rgba(0,0,0,.4)}
 .fan-card:hover{border-color:#5A5446}
 .fan-card:not(.on) .fan-text,.fan-card:not(.on) .fan-title{opacity:.35;transition:opacity .4s}
@@ -360,7 +361,9 @@ html,body{touch-action:manipulation}
 .qr-svg{display:block;width:100%;height:100%}
 .q1{background:#1A1A1A;aspect-ratio:1}.q0{aspect-ratio:1}
 .back{background:#15151A;border:2px solid var(--acc);transform:rotateY(180deg) translateZ(11px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;box-sizing:border-box}
-.layer{position:absolute;inset:0;border-radius:26px;background:color-mix(in srgb,var(--acc) 55%,#000)}
+.layer{position:absolute;inset:0;border-radius:26px;background:#B48A22;backface-visibility:visible}
+.logo-slot{width:64px;height:64px;border-radius:16px;border:2px dashed color-mix(in srgb,var(--acc) 70%,transparent);display:flex;align-items:center;justify-content:center;color:var(--acc)}
+.free-tag{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:800;letter-spacing:.14em;color:#1A1A1A;background:var(--goldg);border-radius:999px;padding:6px 14px}
 .shadow{position:absolute;bottom:0;left:50%;width:240px;height:28px;margin-left:-120px;border-radius:50%;background:radial-gradient(rgba(0,0,0,.7),transparent 70%)}
 .star{width:34px;height:34px;color:var(--acc)}
 
@@ -803,13 +806,14 @@ p{font-size:15.5px !important}
 <div class="scene">
 <div class="qr-in"><div class="qr-bob">
 <div class="qr">
-<div class="layer" style="transform: translateZ(-8px)"></div><div class="layer" style="transform: translateZ(-4px)"></div><div class="layer" style="transform: translateZ(0px)"></div><div class="layer" style="transform: translateZ(4px)"></div><div class="layer" style="transform: translateZ(8px)"></div>
+<div class="layer" style="transform: translateZ(-10.5px)"></div><div class="layer" style="transform: translateZ(-9.75px)"></div><div class="layer" style="transform: translateZ(-9px)"></div><div class="layer" style="transform: translateZ(-8.25px)"></div><div class="layer" style="transform: translateZ(-7.5px)"></div><div class="layer" style="transform: translateZ(-6.75px)"></div><div class="layer" style="transform: translateZ(-6px)"></div><div class="layer" style="transform: translateZ(-5.25px)"></div><div class="layer" style="transform: translateZ(-4.5px)"></div><div class="layer" style="transform: translateZ(-3.75px)"></div><div class="layer" style="transform: translateZ(-3px)"></div><div class="layer" style="transform: translateZ(-2.25px)"></div><div class="layer" style="transform: translateZ(-1.5px)"></div><div class="layer" style="transform: translateZ(-0.75px)"></div><div class="layer" style="transform: translateZ(0px)"></div><div class="layer" style="transform: translateZ(0.75px)"></div><div class="layer" style="transform: translateZ(1.5px)"></div><div class="layer" style="transform: translateZ(2.25px)"></div><div class="layer" style="transform: translateZ(3px)"></div><div class="layer" style="transform: translateZ(3.75px)"></div><div class="layer" style="transform: translateZ(4.5px)"></div><div class="layer" style="transform: translateZ(5.25px)"></div><div class="layer" style="transform: translateZ(6px)"></div><div class="layer" style="transform: translateZ(6.75px)"></div><div class="layer" style="transform: translateZ(7.5px)"></div><div class="layer" style="transform: translateZ(8.25px)"></div><div class="layer" style="transform: translateZ(9px)"></div><div class="layer" style="transform: translateZ(9.75px)"></div><div class="layer" style="transform: translateZ(10.5px)"></div>
 <div class="face front" aria-hidden="true">
 <svg class="qr-svg" viewBox="0 0 21 21" shape-rendering="crispEdges"><path id="qrpath" d="" fill="#1A1A1A"></path></svg>
 </div>
 <div class="face back">
-<span class="disp" style="font-size: 22px; font-weight: 800; color: var(--acc)">Scanează.</span>
-<span style="font-size: 15px; color: #C9C5BD">Lasă-ne o recenzie.</span>
+<span class="logo-slot" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg></span>
+<span class="disp" style="font-size: 21px; font-weight: 800; line-height: 1.15; color: #FFFDF4">LOGO-UL TĂU<br>AICI</span>
+<span class="free-tag">GRATUIT</span>
 </div>
 </div>
 </div></div>
@@ -1155,7 +1159,7 @@ class Component extends DCLogic {
       };
     }
     var layers = [];
-    for (var z = -8; z <= 8; z += 4) layers.push({ style: 'transform: translateZ(' + z + 'px)' });
+    for (var z = -10.5; z <= 10.5; z += 0.75) layers.push({ style: 'transform: translateZ(' + z + 'px)' });
     if (!this._cells) this._cells = this.qrCells();
     if (!this._const) this._const = this.constellation();
     var stepData = [
@@ -1225,7 +1229,7 @@ class Component extends DCLogic {
         'BEGIN:VCARD', 'VERSION:3.0', 'N:;Finfluence;;;', 'FN:Finfluence',
         'ORG:Finfluence', 'TITLE:Agenție de conținut · Oradea',
         'TEL;TYPE=CELL:+40770522564', 'EMAIL:oanafilip3004@gmail.com',
-        'URL:https://instagram.com/oanaaa.aaa', 'ADR;TYPE=WORK:;;;Oradea;;;România',
+        'URL:https://instagram.com/oanaaa.aaa',
         'NOTE:Video\\, foto și grafică pentru restaurante\\, cafenele și afaceri locale.',
         'END:VCARD'
       ].join('\r\n'))),
