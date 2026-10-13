@@ -2,12 +2,24 @@
 <html lang="ro">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Finfluence — Portofoliu</title>
+<meta name="theme-color" content="#1A1A1A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Finfluence · Filmăm. Postăm. Creștem.">
+<meta property="og:description" content="Video, foto și grafică pentru restaurante, cafenele, cluburi sportive și afaceri locale din Oradea.">
+<meta property="og:image" content="https://finfluencerom-arch.github.io/finfluence/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://finfluencerom-arch.github.io/finfluence/">
+<meta property="og:locale" content="ro_RO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231A1A1A'/%3E%3Ctext x='15' y='47' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='40' fill='%23FFFDF4'%3Ef%3C/text%3E%3Ccircle cx='45' cy='43' r='5.5' fill='%23EFC23F'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="og-icon.png">
+<title>Finfluence · Filmăm. Postăm. Creștem.</title>
 <meta name="description" content="Finfluence: conținut video, foto și grafică pentru restaurante, cafenele și afaceri locale din Oradea.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&amp;family=Manrope:wght@400;500;700&amp;family=Caveat:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&amp;family=Manrope:wght@400;500;700&amp;family=Caveat:wght@500;700&amp;family=Playfair+Display:ital,wght@1,400;1,500&amp;display=swap">
 <style>
 body{margin:0;background:#1A1A1A}
 a{color:#FFFDF4}a:hover{color:#ffffff}
@@ -51,7 +63,7 @@ html{scroll-behavior:smooth}
 /* munca noastra: banda de reeluri care curge singura */
 .worktabs{display:flex;flex-wrap:wrap;gap:4px;padding:5px;border-radius:999px;background:rgba(36,36,34,.7);border:1px solid #363632}
 .reel-row{overflow:hidden;padding:30px 0 50px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.reel-track{display:flex;gap:18px;width:max-content;animation:mq 34s linear infinite}
+.reel-track{display:flex;gap:18px;width:max-content;animation:mq 75s linear infinite}
 .reel-row:hover .reel-track,.reel-row:active .reel-track{animation-play-state:paused}
 .f916{aspect-ratio:9/16}.f45{aspect-ratio:4/5}.f11{aspect-ratio:1/1}.f169{aspect-ratio:16/9}.fa4{aspect-ratio:1/1.414}
 .reel{position:relative;height:420px;border-radius:26px;overflow:hidden;flex:none;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,253,244,.08);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
@@ -188,6 +200,71 @@ header{backdrop-filter:none !important;background:rgba(26,26,26,.96) !important}
 .navlink{display:none}
 .fan-card.on{transform:translateY(-4px) scale(1)}
 }
+/* vă recunoașteți? */
+.ilist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:column;grid-template-rows:repeat(4,auto);gap:22px 56px;text-align:left;width:100%}
+.il-item{display:flex;gap:14px;align-items:flex-start;font-size:21px;line-height:1.45;color:#A3A09A}
+.il-item strong{color:#FFFDF4;font-weight:700}
+.il-star{flex:none;margin-top:5px;color:var(--acc);filter:drop-shadow(0 0 6px color-mix(in srgb,var(--acc) 70%,transparent));animation:ctw 2.4s ease-in-out infinite alternate;animation-delay:var(--d)}
+.ilist.wait .il-item{opacity:0;transform:translateY(14px)}
+.ilist.go .il-item{animation:ilin .6s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d)}
+@keyframes ilin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.il-bridge{margin:16px 0 0;font-family:'Unbounded',sans-serif;font-size:24px;font-weight:500;color:#FFFDF4;line-height:1.35}
+.il-bridge strong{color:var(--acc)}
+.il-cta{margin-top:12px;min-height:58px;padding:0 34px;font-size:17px;font-family:'Unbounded',sans-serif;letter-spacing:.02em}
+/* cta la mijloc */
+.midcta{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding:28px 32px;border-radius:28px;background:rgba(36,36,34,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid color-mix(in srgb,var(--acc) 45%,transparent);box-shadow:0 0 60px color-mix(in srgb,var(--acc) 10%,transparent)}
+/* spatii mai mici intre sectiuni, si pe laptop */
+@media (min-width:761px){
+section{padding-top:84px !important;padding-bottom:28px !important}
+#top{padding-top:110px !important;padding-bottom:56px !important}
+#munca{padding-bottom:40px !important}
+}
+html,body{touch-action:manipulation}
+/* buton plutitor */
+.floatcta{position:fixed;right:20px;bottom:20px;z-index:45;display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 22px;border-radius:999px;background:var(--acc);color:#1A1A1A;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 14px 40px rgba(0,0,0,.45),0 0 30px color-mix(in srgb,var(--acc) 30%,transparent);opacity:0;transform:translateY(24px) scale(.9);pointer-events:none;transition:opacity .35s,transform .45s cubic-bezier(.2,.9,.3,1.2)}
+.floatcta:hover{color:#1A1A1A}
+.floatcta.on{opacity:1;transform:none;pointer-events:auto}
+@media (max-width:760px){.floatcta{right:14px;bottom:14px;min-height:46px;padding:0 16px;font-size:13.5px}}
+.contact-line{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 12px;font-size:15px;color:#A3A09A}
+.contact-line a{color:#C9C5BD;text-decoration:none;border-bottom:1px solid #4A4A44;transition:color .2s,border-color .2s}
+.contact-line a:hover{color:var(--acc);border-color:var(--acc)}
+/* ce urmeaza dupa ce apasati */
+.next{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:880px;margin-top:22px}
+.next-h{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A3A09A}
+.next-list{list-style:none;margin:0;padding:0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative}
+.next-list::before{content:'';position:absolute;top:26px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--acc) 70%,transparent) 15%,color-mix(in srgb,var(--acc) 70%,transparent) 85%,transparent);background-size:200% 100%;animation:nextflow 3s linear infinite}
+@keyframes nextflow{from{background-position:100% 0}to{background-position:-100% 0}}
+.next-step{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:0 4px}
+.next-step strong{font-size:16px;color:#FFFDF4}
+.next-step > span:last-child{font-size:14px;color:#A3A09A;line-height:1.4}
+.next-dot{position:relative;width:52px;height:52px;border-radius:50%;background:#1A1A1A;border:1.5px solid var(--acc);color:var(--acc);display:flex;align-items:center;justify-content:center;margin-bottom:6px;box-shadow:0 0 0 6px #1A1A1A,0 0 24px color-mix(in srgb,var(--acc) 25%,transparent);animation:nextpulse 4s ease-in-out infinite;animation-delay:calc(var(--i) * 1s)}
+@keyframes nextpulse{0%,70%,100%{transform:none;background:#1A1A1A;color:var(--acc)}10%,25%{transform:scale(1.12);background:var(--acc);color:#1A1A1A}}
+.next-n{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:var(--acc);color:#1A1A1A;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.next-wide{margin-top:34px}
+@media (max-width:760px){
+.next-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 10px}
+.next-list::before{display:none}
+.next-dot{width:44px;height:44px}
+.next-step strong{font-size:14px}
+.next-step > span:last-child{font-size:12.5px}
+.next-h{font-size:11px}
+}
+/* finisaje: auriu metalic, serif, granulatie, separatoare */
+:root{--goldg:linear-gradient(135deg,#FFE58A 0%,#F2C84B 38%,#E3AE27 72%,#C8901A 100%)}
+.btn-acc,.floatcta,.seecur-dot,.next-n,.metabadge,.bchip-meta svg{background-image:var(--goldg)}
+.btn-acc,.floatcta{background-color:#EFC23F;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(120,80,0,.25)}
+.btn-acc:hover{filter:brightness(1.06)}
+.fan-dot.on span,.sw.on,.comet{background-image:var(--goldg)}
+.goldtext{background:var(--goldg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.serif{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:0;font-size:1.08em;line-height:1}
+.shine-acc{background-image:linear-gradient(105deg,#F2C84B 0%,#E3AE27 40%,#FFF0B8 48%,#FFFFFF 50%,#FFF0B8 52%,#E3AE27 60%,#F2C84B 100%)}
+.grain{position:fixed;inset:-50%;z-index:30;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+.sep{display:flex;align-items:center;justify-content:center;gap:14px;max-width:1280px;margin:0 auto;padding:30px 24px 0;color:var(--acc)}
+.sep::before,.sep::after{content:'';flex:1;height:1px;max-width:420px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--acc) 55%,transparent))}
+.sep::after{background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 55%,transparent),transparent)}
+.sep svg{filter:drop-shadow(0 0 6px var(--acc));animation:ctw 2.6s ease-in-out infinite alternate}
+@media (hover:none),(max-width:760px){.grain{animation:none;opacity:.05}.sep{padding-top:18px}}
 /* cer de seara */
 .sky{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse 120% 80% at 50% 0%,#232329 0%,#1A1A1A 55%,#151515 100%)}
 .stars{position:absolute;inset:-50%;background-repeat:repeat}
@@ -315,7 +392,7 @@ header{backdrop-filter:none !important;background:rgba(26,26,26,.96) !important}
 @keyframes fromr{from{transform:translateX(160px) rotate(6deg);opacity:.3}to{transform:none;opacity:1}}
 @keyframes plusin{from{transform:scale(0) rotate(-180deg)}to{transform:none}}
 @keyframes growbar{from{transform:scaleY(.08)}to{transform:none}}
-@media (prefers-reduced-motion: reduce){.reveal,.tilt-l,.tilt-r,.bun-l,.bun-r,.bun-plus,.qr-in,.ba,.w,.mq-track,.reel-track,.bchip,.heart,.comment,.shine,.cline,.cstar,.shoot,.aura,.stars{animation:none !important}.qr{animation-duration:24s}}
+@media (prefers-reduced-motion: reduce){.reveal,.tilt-l,.tilt-r,.bun-l,.bun-r,.bun-plus,.qr-in,.ba,.w,.mq-track,.reel-track,.grain,.bchip,.il-item,.il-star,.next-dot,.next-list,.heart,.comment,.shine,.cline,.cstar,.shoot,.aura,.stars{animation:none !important}.qr{animation-duration:24s}}
 @media (max-width:760px){
 .pola{width:200px}
 .pola-zone{min-height:420px}
@@ -332,7 +409,21 @@ header{backdrop-filter:none !important;background:rgba(26,26,26,.96) !important}
 
 /* telefon: mai aerisit, mai mic */
 @media (max-width:760px){
-section{padding-top:64px !important;padding-bottom:28px !important}
+section{padding-top:46px !important;padding-bottom:14px !important}
+.ilist{grid-template-columns:1fr;grid-auto-flow:row;grid-template-rows:none;gap:14px}
+.il-item{font-size:15.5px;gap:10px}
+.il-star{width:15px;height:15px;margin-top:4px}
+.il-bridge{font-size:18px !important}
+.il-cta{min-height:52px;font-size:14px;padding:0 24px}
+.midcta{padding:20px;text-align:left}
+.midcta strong{font-size:22px !important}
+.reel-row{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:20px 16px 34px;-webkit-mask-image:none;mask-image:none}
+.reel-row::-webkit-scrollbar{display:none}
+.reel-track{animation:none !important;gap:12px}
+.reel{scroll-snap-align:center}
+.reel:nth-child(n+7){display:none}
+.reel{align-items:flex-start;padding-top:58px}
+.reel .ph-label{font-size:12px;padding:8px 10px;max-width:150px}
 #top{padding-top:56px !important;padding-bottom:48px !important;gap:20px !important}
 .hero-h{font-size:44px !important}
 .h2{font-size:30px !important;line-height:1.1 !important}
@@ -397,8 +488,13 @@ p{font-size:15.5px !important}
 <span class="shoot" style="top: 34%; left: 55%; animation-delay: 9s; animation-duration: 17s"></span>
 <span class="shoot" style="top: 8%; left: 40%; animation-delay: 15s; animation-duration: 21s"></span>
 </div>
+<div class="grain" aria-hidden="true"></div>
+
 <!-- BARA DE PROGRES: COMETA -->
 <div class="comet-track" aria-hidden="true"><div class="comet"></div></div>
+
+<!-- BUTON PLUTITOR -->
+<a href="tel:+40770522564" class="floatcta"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 9h18M5 5h14v16H5z"></path></svg>Programează o întâlnire</a>
 
 <!-- CURSORUL „VEZI” PESTE MATERIALE -->
 <div class="seecur" aria-hidden="true"><span class="seecur-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"></path></svg>Vezi</span></div>
@@ -416,7 +512,7 @@ p{font-size:15.5px !important}
 <a href="#rezultate" class="navlink" style="text-decoration: none; padding: 10px 12px; font-weight: 500">Clienți</a>
 <a href="#cum-lucram" class="navlink" style="text-decoration: none; padding: 10px 12px; font-weight: 500">Cum lucrăm</a>
 <a href="#pachete" class="navlink" style="text-decoration: none; padding: 10px 12px; font-weight: 500">Pachete</a>
-<a href="#contact" class="btn btn-acc mag" style="min-height: 44px; padding: 0 20px; font-size: 15px">Hai să vorbim</a>
+<a href="tel:+40770522564" class="btn btn-acc mag" style="min-height: 44px; padding: 0 20px; font-size: 15px">Hai să vorbim</a>
 </div>
 </nav>
 </header>
@@ -427,7 +523,7 @@ p{font-size:15.5px !important}
 <h1 class="disp hero-h" style="margin: 0; font-size: 108px; line-height: .98; font-weight: 800">
 <span class="w" style="animation-delay: .05s"><span class="shine">Filmăm.</span></span><br>
 <span class="w" style="animation-delay: .25s"><span class="shine" style="animation-delay: .35s">Postăm.</span></span><br>
-<span class="w" style="animation-delay: .45s"><span class="shine shine-acc" style="animation-delay: .7s">Creștem.</span></span>
+<span class="w" style="animation-delay: .45s"><span class="shine shine-acc serif" style="animation-delay: .7s">Creștem.</span></span>
 </h1>
 <p class="w" style="animation-delay: .7s; margin: 0; max-width: 620px; font-size: 20px; color: #C9C5BD">Conținut scurt pentru restaurante, cafenele, cluburi sportive și afaceri locale: video, foto și grafică, gândite pe stilul vostru.</p>
 <div class="w" style="animation-delay: .9s; display: flex; flex-wrap: wrap; gap: 12px">
@@ -447,6 +543,39 @@ p{font-size:15.5px !important}
 </div>
 </div>
 
+<!-- VĂ RECUNOAȘTEȚI? -->
+<section id="suna-cunoscut" style="max-width: 1180px; margin: 0 auto; padding: 120px 24px 40px; display: flex; flex-direction: column; gap: 40px; align-items: center; text-align: center">
+<div class="reveal" style="display: flex; flex-direction: column; gap: 12px; align-items: center">
+<p class="eyebrow" style="color: #A3A09A">Fiți sinceri cu voi</p>
+<h2 class="disp h2" style="margin: 0; font-size: 64px; line-height: 1">Vă <span class="serif goldtext">recunoașteți?</span></h2>
+</div>
+<ul class="ilist">
+<li class="il-item" style="--d: 0.10s"><svg class="il-star" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg><span>Postați <strong>când vă aduceți aminte</strong>, nu când trebuie.</span></li>
+<li class="il-item" style="--d: 0.22s"><svg class="il-star" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg><span>Știți că afacerea e bună, dar <strong>online nu se vede</strong>.</span></li>
+<li class="il-item" style="--d: 0.34s"><svg class="il-star" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg><span>Ați încercat singuri sau cu altcineva, <strong>dar nu s-a lipit nimic</strong>.</span></li>
+<li class="il-item" style="--d: 0.46s"><svg class="il-star" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg><span><strong>N-aveți timp</strong> să filmați, să editați și să răspundeți la comentarii.</span></li>
+<li class="il-item" style="--d: 0.16s"><svg class="il-star" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg><span>Vreți conținut care <strong>arată ca voi</strong>, nu ca un șablon.</span></li>
+<li class="il-item" style="--d: 0.28s"><svg class="il-star" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg><span>Vreți pe cineva care <strong>vine la voi</strong> și se ocupă de tot.</span></li>
+<li class="il-item" style="--d: 0.40s"><svg class="il-star" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg><span>Vreți să vă găsească și <strong>turiștii, pe Google și Tripadvisor</strong>.</span></li>
+<li class="il-item" style="--d: 0.52s"><svg class="il-star" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg><span>Vreți o colaborare <strong>pe termen lung</strong>, nu un video și gata.</span></li>
+</ul>
+<div class="reveal" style="display: flex; flex-direction: column; gap: 14px; align-items: center; max-width: 720px">
+<p class="il-bridge">Dacă v-ați regăsit, <strong>Finfluence</strong> e făcut pentru voi.</p>
+<p style="margin: 0; color: #A3A09A; font-size: 18px">Nu pentru cei care vor doar să se mai gândească. Pentru cei care sunt gata să se vadă.</p>
+<a href="tel:+40770522564" class="btn btn-acc mag pulse il-cta">Programează o întâlnire</a>
+<div class="next reveal">
+<span class="next-h">Ce se întâmplă după ce apăsați?</span>
+<ol class="next-list">
+<li class="next-step" style="--i: 0"><span class="next-dot"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg><span class="next-n">1</span></span><strong>Ne sunați</strong><span>Ne spuneți pe scurt despre afacerea voastră.</span></li>
+<li class="next-step" style="--i: 1"><span class="next-dot"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6zM17 9h1.5a2.5 2.5 0 0 1 0 5H17M8 2v3M12 2v3"></path></svg><span class="next-n">2</span></span><strong>Ne vedem la o cafea</strong><span>30 de minute, la voi sau în oraș.</span></li>
+<li class="next-step" style="--i: 2"><span class="next-dot"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h5"></path></svg><span class="next-n">3</span></span><strong>Primiți propunerea</strong><span>Gândită pentru voi, fără obligații.</span></li>
+<li class="next-step" style="--i: 3"><span class="next-dot"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h12v12H3zM15 10l6-3v10l-6-3z"></path></svg><span class="next-n">4</span></span><strong>Prima filmare</strong><span>Venim la voi cu studioul mobil.</span></li>
+</ol>
+</div>
+</div>
+</section>
+
+<div class="sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg></div>
 <!-- CINE SUNTEM -->
 <section id="noi" style="scroll-margin-top: 60px; max-width: 1280px; margin: 0 auto; padding: 140px 24px 60px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
 <div class="reveal" style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 18px">
@@ -483,11 +612,12 @@ p{font-size:15.5px !important}
 </div>
 </section>
 
+<div class="sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg></div>
 <!-- DE CE NOI: un evantai de cărți -->
 <section id="de-ce-noi" style="max-width: 1280px; margin: 0 auto; padding: 100px 24px 60px; display: flex; flex-direction: column; gap: 28px; align-items: center; text-align: center">
 <div class="reveal" style="display: flex; flex-direction: column; gap: 16px; align-items: center; max-width: 720px">
 <p class="eyebrow">De ce noi</p>
-<h2 class="disp h2" style="margin: 0; font-size: 56px; line-height: 1.04">Cinci motive.<br>Alegeți o carte.</h2>
+<h2 class="disp h2" style="margin: 0; font-size: 56px; line-height: 1.04">Cinci motive.<br><span class="serif">Alegeți o carte.</span></h2>
 </div>
 <div class="fan" role="tablist" aria-label="Motive">
 
@@ -502,12 +632,27 @@ p{font-size:15.5px !important}
 <span style="font-size: 14px; color: #8A867F">Apăsați pe o carte sau glisați ca s-o aduceți în față</span>
 </section>
 
+<!-- CTA dupa De ce noi -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 24px 24px 0">
+<div class="midcta reveal">
+<div style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 420px">
+<strong class="disp" style="font-size: 28px; line-height: 1.15">Sună bine? Hai să ne cunoaștem.</strong>
+<span style="color: #C9C5BD">O cafea, o jumătate de oră, și vă spunem sincer ce am face pentru voi.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="#munca" class="btn btn-ghost mag">Vezi munca noastră</a>
+<a href="tel:+40770522564" class="btn btn-acc mag">Programează o întâlnire</a>
+</div>
+</div>
+</section>
+
+<div class="sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg></div>
 <!-- MUNCA NOASTRA -->
 <section id="munca" style="padding: 140px 0 120px; display: flex; flex-direction: column; gap: 36px">
 <div style="max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between">
 <div class="reveal" style="display: flex; flex-direction: column; gap: 16px; max-width: 640px">
 <p class="eyebrow">Munca noastră</p>
-<h2 class="disp h2" style="margin: 0; font-size: 56px; line-height: 1.04">Exact cum o vedeți pe Instagram.</h2>
+<h2 class="disp h2" style="margin: 0; font-size: 56px; line-height: 1.04">Exact cum o vedeți <span class="serif goldtext">pe Instagram.</span></h2>
 </div>
 <div class="worktabs" role="tablist" aria-label="Tip de conținut">
 
@@ -517,9 +662,9 @@ p{font-size:15.5px !important}
 <div class="reel-track">
 </div>
 </div>
-<p style="margin: 0; text-align: center; color: #8A867F; font-size: 14px">Treceți cu mouse-ul sau atingeți o postare ca să se oprească.</p>
 </section>
 
+<div class="sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg></div>
 <!-- REZULTATE -->
 
 
@@ -555,6 +700,18 @@ p{font-size:15.5px !important}
 </div>
 </section>
 
+<!-- CTA LA MIJLOC -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 40px 24px">
+<div class="midcta reveal">
+<div style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 420px">
+<strong class="disp" style="font-size: 28px; line-height: 1.15">V-a plăcut ce ați văzut?</strong>
+<span style="color: #C9C5BD">Hai să ne vedem la o cafea și vă arătăm ce am face pentru voi.</span>
+</div>
+<a href="tel:+40770522564" class="btn btn-acc mag" style="flex: none">Programează o întâlnire</a>
+</div>
+</section>
+
+<div class="sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg></div>
 <!-- CUM LUCRAM -->
 <section id="cum-lucram" style="max-width: 1280px; margin: 0 auto; padding: 120px 24px 40px; display: flex; flex-direction: column; gap: 40px">
 <div class="reveal" style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
@@ -584,6 +741,18 @@ p{font-size:15.5px !important}
 </div>
 </section>
 
+<!-- CTA dupa Cum lucram -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 24px 24px 0">
+<div class="midcta reveal">
+<div style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 420px">
+<strong class="disp" style="font-size: 28px; line-height: 1.15">Vreți să vedeți cum ar arăta pentru voi?</strong>
+<span style="color: #C9C5BD">Venim la voi, ne uităm la ce aveți acum și vă arătăm primele idei.</span>
+</div>
+<a href="tel:+40770522564" class="btn btn-acc mag" style="flex: none">Programează o întâlnire</a>
+</div>
+</section>
+
+<div class="sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg></div>
 <section id="pachete" style="max-width: 1280px; margin: 0 auto; padding: 120px 24px 40px; display: flex; flex-direction: column; gap: 48px">
 <div class="reveal" style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
 <p class="eyebrow">Pachete</p>
@@ -683,10 +852,12 @@ p{font-size:15.5px !important}
 <button id="metaSw" class="sw" aria-pressed="false" aria-label="Adaugă campanii Meta"></button>
 </div>
 <span style="font-size: 14px; color: #A3A09A">Le gândim și le gestionăm noi. Bugetul de reclame merge direct la Meta.</span>
+<a href="tel:+40770522564" class="btn btn-acc mag" style="margin-top: 8px">Vreau o ofertă pentru noi</a>
 </div>
 </div>
 </section>
 
+<div class="sep" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.6 2.4 7.4 10 10-7.6 2.6-9.4 5.4-10 10-.6-4.6-2.4-7.4-10-10 7.6-2.6 9.4-5.4 10-10z"></path></svg></div>
 <!-- CONTACT + CONSTELATIE -->
 <section id="contact" style="position: relative">
 <div style="max-width: 1280px; margin: 0 auto; padding: 120px 24px 140px; display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center">
@@ -696,13 +867,22 @@ p{font-size:15.5px !important}
 
 </svg>
 </div>
-<h2 class="disp h2" style="margin: 0; font-size: 80px; line-height: 1; font-weight: 800">Hai să ne vedem<br>la o cafea.</h2>
+<h2 class="disp h2" style="margin: 0; font-size: 80px; line-height: 1; font-weight: 800">Hai să ne vedem<br><span class="serif goldtext">la o cafea.</span></h2>
 <p style="margin: 0; max-width: 520px; font-size: 19px; color: #C9C5BD">Venim noi la voi sau ne vedem în oraș. Vă arătăm ce am face pentru afacerea voastră și cât ar costa. Fără obligații.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center">
-<a href="#contact" class="btn btn-acc mag pulse" style="min-height: 60px; padding: 0 34px; font-size: 18px">Programează o întâlnire</a>
+<a href="tel:+40770522564" class="btn btn-acc mag pulse" style="min-height: 60px; padding: 0 34px; font-size: 18px">Programează o întâlnire</a>
 <a id="vcard" href="#" download="Finfluence.vcf" class="btn btn-ghost mag" style="min-height: 60px; padding: 0 28px; font-size: 17px; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-8 0v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 8v6M22 11h-6"></path></svg>Salvează-ne în agendă</a>
 </div>
-<span style="font-size: 15px; color: #A3A09A">[număr de telefon] · [email] · [@instagram]</span>
+<div class="next reveal next-wide">
+<span class="next-h">Ce se întâmplă după ce apăsați?</span>
+<ol class="next-list">
+<li class="next-step" style="--i: 0"><span class="next-dot"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg><span class="next-n">1</span></span><strong>Ne sunați</strong><span>Ne spuneți pe scurt despre afacerea voastră.</span></li>
+<li class="next-step" style="--i: 1"><span class="next-dot"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6zM17 9h1.5a2.5 2.5 0 0 1 0 5H17M8 2v3M12 2v3"></path></svg><span class="next-n">2</span></span><strong>Ne vedem la o cafea</strong><span>30 de minute, la voi sau în oraș.</span></li>
+<li class="next-step" style="--i: 2"><span class="next-dot"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h5"></path></svg><span class="next-n">3</span></span><strong>Primiți propunerea</strong><span>Gândită pentru voi, fără obligații.</span></li>
+<li class="next-step" style="--i: 3"><span class="next-dot"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h12v12H3zM15 10l6-3v10l-6-3z"></path></svg><span class="next-n">4</span></span><strong>Prima filmare</strong><span>Venim la voi cu studioul mobil.</span></li>
+</ol>
+</div>
+<span class="contact-line"><a href="tel:+40770522564">0770 522 564</a><span aria-hidden="true">·</span><a href="mailto:oanafilip3004@gmail.com">oanafilip3004@gmail.com</a><span aria-hidden="true">·</span><a href="https://instagram.com/oanaaa.aaa" target="_blank" rel="noopener">@oanaaa.aaa</a></span>
 <p class="endnote reveal"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6H22l-6.2 4.6 2.4 7.6L12 17.2l-6.2 4.6 2.4-7.6L2 9.6h7.6z"></path></svg>Ai ajuns până la final. Asta e deja un semn bun.</p>
 </div>
 </section>
@@ -731,6 +911,12 @@ class Component extends DCLogic {
       var max = el.scrollHeight - el.clientHeight;
       var pct = max > 0 ? (el.scrollTop / max) * 100 : 0;
       if (self._comet) self._comet.style.width = pct + '%';
+      // butonul plutitor apare dupa prima sectiune si dispare la final
+      if (self._float) {
+        var vh = window.innerHeight, ct = document.getElementById('contact');
+        var nearEnd = ct ? ct.getBoundingClientRect().top < vh * 0.9 : false;
+        self._float.classList.toggle('on', el.scrollTop > vh * 0.8 && !nearEnd && self.state.lb < 0);
+      }
       var s = self._sky;
       if (s) {
         var y = el.scrollTop;
@@ -779,6 +965,14 @@ class Component extends DCLogic {
     // 2) toate animatiile stau pe loc cand pagina nu e vizibila
     this._onVis = function () { if (self._root) self._root.classList.toggle('paused', document.hidden); };
     document.addEventListener('visibilitychange', this._onVis);
+    // „Sună cunoscut?”: liniile se taie cand sectiunea apare pe ecran
+    if (window.IntersectionObserver && this._painEl) {
+      this.setState({ painReady: true });
+      this._io4 = new IntersectionObserver(function (en) {
+        if (en[0] && en[0].isIntersecting) { self.setState({ painOn: true }); self._io4.disconnect(); }
+      }, { threshold: 0.5 });
+      this._io4.observe(this._painEl);
+    }
     // constelatia se deseneaza cand ajunge pe ecran
     if (window.IntersectionObserver && this._constEl) {
       this.setState({ constReady: true });
@@ -797,6 +991,7 @@ class Component extends DCLogic {
     if (this._io) this._io.disconnect();
     if (this._io2) this._io2.disconnect();
     if (this._io3) this._io3.disconnect();
+    if (this._io4) this._io4.disconnect();
     clearInterval(this._whyTimer);
     document.removeEventListener('visibilitychange', this._onVis);
     if (this._raf) cancelAnimationFrame(this._raf);
@@ -992,6 +1187,9 @@ class Component extends DCLogic {
     });
     return {
       accent: this.props.accent ?? '#EFC23F',
+      painCls: this.state.painOn ? 'ilist go' : (this.state.painReady ? 'ilist wait' : 'ilist'),
+      painRef: this._painRef || (this._painRef = function (el) { self._painEl = el; }),
+      floatRef: this._floatRef || (this._floatRef = function (el) { self._float = el; }),
       whyPrev: function () { self.setState({ why: (self.state.why + 4) % 5, whyManual: true }); },
       whyNext: function () { self.setState({ why: (self.state.why + 1) % 5, whyManual: true }); },
       fanDown: function (e) { self._fx = e.clientX; },
@@ -1026,8 +1224,8 @@ class Component extends DCLogic {
       vcard: this._vcard || (this._vcard = 'data:text/vcard;charset=utf-8,' + encodeURIComponent([
         'BEGIN:VCARD', 'VERSION:3.0', 'N:;Finfluence;;;', 'FN:Finfluence',
         'ORG:Finfluence', 'TITLE:Agenție de conținut · Oradea',
-        'TEL;TYPE=CELL:[număr de telefon]', 'EMAIL:[email]',
-        'URL:https://instagram.com/[instagram]', 'ADR;TYPE=WORK:;;;Oradea;;;România',
+        'TEL;TYPE=CELL:+40770522564', 'EMAIL:oanafilip3004@gmail.com',
+        'URL:https://instagram.com/oanaaa.aaa', 'ADR;TYPE=WORK:;;;Oradea;;;România',
         'NOTE:Video\\, foto și grafică pentru restaurante\\, cafenele și afaceri locale.',
         'END:VCARD'
       ].join('\r\n'))),
@@ -1225,13 +1423,14 @@ class Component extends DCLogic {
     $('#pola-o').className = V.olaCls;
     $('#pola-g').className = V.gabiCls;
     cst.setAttribute('class', V.constCls);
+    $('.ilist').className = V.painCls;
   }
   window.__update = update;
 
   // referințe și evenimente
   var root = $('#root');
   V.rootRef(root); V.skyRef($('.sky')); V.cometRef($('.comet')); V.seeRef($('.seecur'));
-  V.stepsRef($('#cum-lucram')); V.whyRef($('#de-ce-noi')); V.constRef(cst);
+  V.stepsRef($('#cum-lucram')); V.whyRef($('#de-ce-noi')); V.painRef($('.ilist')); V.floatRef($('.floatcta')); V.constRef(cst);
   V.olaRef($('#pola-o')); V.gabiRef($('#pola-g'));
   var fan = $('.fan');
   fan.addEventListener('pointerdown', function (e) { V.fanDown(e); });
