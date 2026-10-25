@@ -63,8 +63,15 @@ html{scroll-behavior:smooth}
 /* munca noastra: banda de reeluri care curge singura */
 .worktabs{display:flex;flex-wrap:wrap;gap:4px;padding:5px;border-radius:999px;background:rgba(36,36,34,.7);border:1px solid #363632}
 .reel-row{overflow:hidden;padding:30px 0 50px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.reel-track{display:flex;gap:18px;width:max-content;animation:mq 75s linear infinite}
-.reel-row:hover .reel-track,.reel-row:active .reel-track{animation-play-state:paused}
+.reel-track{display:flex;gap:18px;width:max-content}
+.reel-row{overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain}
+.reel-row::-webkit-scrollbar{display:none}
+.reel-row.grab .reel{pointer-events:none}
+.reel-wrap{position:relative}
+.reel-nav{position:absolute;top:50%;z-index:3;width:56px;height:56px;margin-top:-28px;border-radius:50%;border:1px solid rgba(255,253,244,.22);background:rgba(36,36,34,.82);backdrop-filter:blur(8px);color:#FFFDF4;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.reel-nav:hover{background:var(--acc);color:#1A1A1A;transform:scale(1.06)}
+.reel-nav:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.reel-nav.rn-prev{left:28px}.reel-nav.rn-next{right:28px}
 .f916{aspect-ratio:9/16}.f45{aspect-ratio:4/5}.f11{aspect-ratio:1/1}.f169{aspect-ratio:16/9}.fa4{aspect-ratio:1/1.414}
 .reel{position:relative;height:420px;border-radius:26px;overflow:hidden;flex:none;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,253,244,.08);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
 .reel:nth-child(even){transform:translateY(22px)}
@@ -433,7 +440,6 @@ html,body{touch-action:manipulation}
 .scene{width:100%;height:330px}
 .qr{width:230px;height:230px}
 .reel{height:320px}
-.reel-track{animation-duration:26s}
 .steplist{flex-direction:row !important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
 .steplist .stepbtn{width:auto;white-space:nowrap;scroll-snap-align:start}
 .hero-h{font-size:48px !important}
@@ -452,7 +458,8 @@ section{padding-top:46px !important;padding-bottom:14px !important}
 .midcta strong{font-size:22px !important}
 .reel-row{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:20px 16px 34px;-webkit-mask-image:none;mask-image:none}
 .reel-row::-webkit-scrollbar{display:none}
-.reel-track{animation:none !important;gap:12px}
+.reel-track{gap:12px}
+.reel-nav{display:none}
 .reel{scroll-snap-align:center}
 .reel.dup{display:none}
 .reel{align-items:center;padding-top:0}
@@ -701,8 +708,12 @@ p{font-size:15.5px !important}
 
 </div>
 </div>
+<div class="reel-wrap">
+<button class="reel-nav rn-prev" aria-label="Înapoi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"></path></svg></button>
+<button class="reel-nav rn-next" aria-label="Mai departe"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button>
 <div class="reel-row" aria-label="Exemple din munca noastră">
 <div class="reel-track">
+</div>
 </div>
 </div>
 </section>
@@ -943,8 +954,82 @@ class Component extends DCLogic {
     super(props);
     this.state = { tab: 'video', metaOn: false, step: 0, manual: false, lb: -1, flipO: false, flipG: false, why: 0, whyManual: false };
   }
+  // banda de la „Munca noastră”: merge singură, dar se poate trage, derula și muta cu săgețile
+  reelInit() {
+    var pos = -1, last = 0, first = null, hold = 0, raf = 0, drag = null, moved = false, SPEED = 42;
+    var mob = function () { return window.matchMedia('(max-width:760px)').matches; };
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function parts() {
+      var row = document.querySelector('.reel-row'), tr = row && row.querySelector('.reel-track');
+      return tr ? { row: row, tr: tr, w: tr.scrollWidth / 4 } : null;
+    }
+    function wrap(P) {
+      if (P.w < 10) return;
+      if (P.row.scrollLeft >= P.w * 2) P.row.scrollLeft -= P.w;
+      else if (P.row.scrollLeft < P.w * 0.5) P.row.scrollLeft += P.w;
+    }
+    function tick(ts) {
+      raf = requestAnimationFrame(tick);
+      var dt = last ? Math.min(ts - last, 64) / 1000 : 0; last = ts;
+      var P = parts(); if (!P || mob()) { pos = -1; return; }
+      if (P.tr.firstElementChild !== first) { first = P.tr.firstElementChild; P.row.scrollLeft = P.w; pos = P.row.scrollLeft; return; }
+      var busy = drag || ts < hold || P.row.matches(':hover') || document.querySelector('.lb') || document.hidden || still;
+      if (busy) { pos = -1; wrap(P); return; }
+      if (pos < 0) pos = P.row.scrollLeft;
+      pos += SPEED * dt;
+      if (pos >= P.w * 2) pos -= P.w;
+      P.row.scrollLeft = pos;
+    }
+    raf = requestAnimationFrame(tick);
+    function onDown(e) {
+      var row = e.target.closest && e.target.closest('.reel-row');
+      if (!row || e.pointerType !== 'mouse' || e.button !== 0 || mob()) return;
+      drag = { x: e.clientX, s: row.scrollLeft, row: row }; moved = false;
+    }
+    function onMoveP(e) {
+      if (!drag) return;
+      var dx = e.clientX - drag.x;
+      if (!moved && Math.abs(dx) > 6) { moved = true; drag.row.classList.add('grab'); }
+      if (moved) { drag.row.scrollLeft = drag.s - dx; var P = parts(); if (P) { var b = P.row.scrollLeft; wrap(P); drag.s += P.row.scrollLeft - b; } }
+    }
+    function onUp() {
+      if (!drag) return;
+      drag.row.classList.remove('grab'); drag = null; hold = performance.now() + 2500;
+      if (moved) setTimeout(function () { moved = false; }, 0);
+    }
+    function onClickCap(e) {
+      if (moved && e.target.closest && e.target.closest('.reel-row')) { e.preventDefault(); e.stopPropagation(); }
+      var nb = e.target.closest && e.target.closest('.reel-nav');
+      if (nb) {
+        var P = parts(); if (!P) return;
+        var card = P.tr.querySelector('.reel:not(.dup)'), step = card ? (card.getBoundingClientRect().width + 18) * 2 : 500;
+        wrap(P); hold = performance.now() + 4000;
+        P.row.scrollBy({ left: nb.classList.contains('rn-prev') ? -step : step, behavior: 'smooth' });
+      }
+    }
+    function onWheel(e) {
+      if (e.target.closest && e.target.closest('.reel-row') && Math.abs(e.deltaX) > Math.abs(e.deltaY)) hold = performance.now() + 2500;
+    }
+    document.addEventListener('pointerdown', onDown);
+    window.addEventListener('pointermove', onMoveP);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('pointercancel', onUp);
+    document.addEventListener('click', onClickCap, true);
+    document.addEventListener('wheel', onWheel, { passive: true });
+    this._reelOff = function () {
+      cancelAnimationFrame(raf);
+      document.removeEventListener('pointerdown', onDown);
+      window.removeEventListener('pointermove', onMoveP);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('pointercancel', onUp);
+      document.removeEventListener('click', onClickCap, true);
+      document.removeEventListener('wheel', onWheel);
+    };
+  }
+
   componentDidMount() {
     var self = this;
+    this.reelInit();
     this._timer = setInterval(function () {
       if (!self.state.manual && self.state.lb < 0 && self._stepsVisible && !document.hidden) self.setState({ step: (self.state.step + 1) % 9 });
     }, 4000);
@@ -1027,6 +1112,7 @@ class Component extends DCLogic {
     this._onScroll();
   }
   componentWillUnmount() {
+    if (this._reelOff) this._reelOff();
     clearInterval(this._timer);
     window.removeEventListener('scroll', this._onScroll);
     window.removeEventListener('deviceorientation', this._onTilt);
@@ -1152,12 +1238,12 @@ class Component extends DCLogic {
     }
     var data = {
       video: [
-        Object.assign(item('', '', 'video 1', 'f916', 't1', true, 'media/video/01-t.webp', 'media/video/01-p.webp'), { vid: 'media/video/01.mp4' }),
-        item('Trend adaptat pe meniul localului', 'Trend', 'video 2', 'f916', 't2', true),
-        item('Video cu produs, filmat în studioul mobil', 'Produs', 'video 3', 'f916', 't3', true),
-        item('Trend adaptat pe afacerea voastră', 'Trend', 'video 4', 'f916', 't1', true),
-        item('Story din spatele tejghelei', 'Story', 'video 5', 'f916', 't2', true),
-        item('Video cu modele care folosesc produsul', 'Cu modele', 'video 6', 'f916', 't3', true)
+        Object.assign(item('', '', 'video 1', 'f916', 't2', true, 'media/video/01-t.webp', 'media/video/01-p.webp'), { vid: 'media/video/01.mp4' }),
+        Object.assign(item('', '', 'video 2', 'f916', 't3', true, 'media/video/02-t.webp', 'media/video/02-p.webp'), { vid: 'media/video/02.mp4' }),
+        Object.assign(item('', '', 'video 3', 'f916', 't1', true, 'media/video/03-t.webp', 'media/video/03-p.webp'), { vid: 'media/video/03.mp4' }),
+        Object.assign(item('', '', 'video 4', 'f916', 't2', true, 'media/video/04-t.webp', 'media/video/04-p.webp'), { vid: 'media/video/04.mp4' }),
+        Object.assign(item('', '', 'video 5', 'f916', 't3', true, 'media/video/05-t.webp', 'media/video/05-p.webp'), { vid: 'media/video/05.mp4' }),
+        Object.assign(item('', '', 'video 6', 'f916', 't1', true, 'media/video/06-t.webp', 'media/video/06-p.webp'), { vid: 'media/video/06.mp4' })
       ],
       foto: [
         item('', '', 'poză 1', 'f32', 't2', false, 'media/foto/01-t.webp', 'media/foto/01.webp'),
@@ -1378,7 +1464,6 @@ class Component extends DCLogic {
       tabs: tabs,
       feed: data[tab],
       feedLoop: feedOpen.concat(feedDup, feedDup, feedDup),
-      trackStyle: 'animation-duration: ' + Math.round(n * 12.5) + 's',
       lbOpen: lbItem !== null,
       lb: lbItem || {},
       closeLb: function () { self.setState({ lb: -1 }); },
@@ -1434,7 +1519,6 @@ class Component extends DCLogic {
     }).join('');
     if (last.tab !== st.tab) {
       last.tab = st.tab;
-      $('.reel-track').setAttribute('style', V.trackStyle);
       $('.reel-track').innerHTML = V.feedLoop.map(function (p, i) {
         return '<button class="' + p.cls + '" data-open="' + i + '" aria-label="Deschide materialul">' +
           (p.img ? '<img class="reel-img" src="' + p.img + '" alt="" loading="lazy" decoding="async" draggable="false">' : '<span class="ph-label">[Pune aici: ' + esc(p.label) + ']</span>') + (p.car ? '<span class="reel-car"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="8" width="13" height="13" rx="3"></rect><path d="M16 4H6a2 2 0 0 0-2 2v10"></path></svg>Carusel</span>' : '') + (p.video ? PLAY : '') + '</button>';
