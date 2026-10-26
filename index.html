@@ -98,6 +98,49 @@ html{scroll-behavior:smooth}
 .lb-media.f32{height:auto;width:min(86vw,1100px)}
 .lb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .lb-hide{display:none !important}
+.res-h{margin:8px 0 0;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A3A09A}
+.res-row{display:flex;flex-wrap:wrap;gap:28px}
+.res-card{flex:1 1 440px;display:flex;flex-direction:column;gap:10px;padding:28px 30px;border-radius:28px;background:linear-gradient(160deg,rgba(239,194,63,.10),rgba(36,36,34,.6) 55%);border:1px solid rgba(239,194,63,.28);box-sizing:border-box}
+.res-who{font-size:14px;font-weight:700;color:#C9C5BD}
+.res-ba{display:flex;align-items:center;flex-wrap:wrap;gap:14px;color:#8A867F}
+.res-before{font:800 34px/1 'Manrope',sans-serif;color:#8A867F;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(138,134,127,.6)}
+.res-after{font:800 54px/1 'Manrope',sans-serif;color:var(--acc);letter-spacing:-.02em}
+.res-what{color:#C9C5BD;font-size:16px}
+.res-tag{align-self:flex-start;margin-top:4px;background:var(--acc);color:#1A1A1A;font-weight:700;font-size:13px;border-radius:999px;padding:5px 12px}
+.camp{margin-top:0;display:flex;flex-wrap:wrap;gap:44px;align-items:center;padding:40px;border-radius:36px;background:rgba(30,30,28,.8);border:1px solid #363632}
+.camp-media{flex:0 0 280px;display:flex;justify-content:center}
+.camp-vid{width:280px;aspect-ratio:9/16;border-radius:26px;background:#000;object-fit:cover;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,253,244,.1)}
+.camp-body{flex:1 1 420px;display:flex;flex-direction:column;gap:18px}
+.camp-chip{align-self:flex-start;background:rgba(239,194,63,.14);color:var(--acc);border:1px solid rgba(239,194,63,.4);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:7px 14px}
+.camp-h{margin:0;font-size:40px;line-height:1.08}
+.camp-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.camp-steps li{display:flex;gap:16px;align-items:flex-start}
+.camp-steps li > div{display:flex;flex-direction:column;gap:4px;flex:1}
+.camp-steps strong{font-size:17px}
+.camp-steps li > div > span{color:#C9C5BD}
+.camp-n{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--acc);color:var(--acc);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.camp-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:8px}
+.camp-stats div{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:18px;background:rgba(26,26,26,.7);border:1px solid #363632}
+.camp-stats b{font:800 30px/1 'Manrope',sans-serif;color:var(--acc);letter-spacing:-.02em}
+.camp-stats span{font-size:13.5px;color:#A3A09A;line-height:1.35}
+@media (max-width:760px){.res-card{padding:22px}.res-before{font-size:26px}.res-after{font-size:42px}.camp{padding:22px;gap:26px;margin-top:40px}.camp-media{flex-basis:100%}.camp-vid{width:min(240px,70vw)}.camp-h{font-size:28px}.camp-stats{grid-template-columns:1fr}.camp-stats div{flex-direction:row;align-items:baseline;gap:10px}.camp-stats b{font-size:24px}}
+.reel-stat{position:absolute;left:0;right:0;bottom:0;z-index:1;display:flex;align-items:baseline;gap:7px;padding:46px 18px 16px;background:linear-gradient(transparent,rgba(10,10,10,.85));color:#FFFDF4;text-align:left}
+.reel-stat svg{align-self:center;color:var(--acc);flex:none}
+.reel-stat b{font:800 30px/1 'Manrope',sans-serif;letter-spacing:-.02em}
+.reel-stat small{font-size:13px;font-weight:600;color:#D9D5CC}
+.lb-stats{width:300px;display:flex;flex-direction:column;gap:4px;padding:22px;border-radius:24px;background:rgba(30,30,28,.92);border:1px solid rgba(255,253,244,.1);box-sizing:border-box}
+.lbs-top{display:flex;flex-direction:column;gap:2px;padding-bottom:12px;margin-bottom:4px;border-bottom:1px solid rgba(255,253,244,.1)}
+.lbs-top strong{font:800 46px/1 'Manrope',sans-serif;color:var(--acc);letter-spacing:-.02em}
+.lbs-top span{font-size:14px;color:#A3A09A}
+.lbs-top .lbs-client{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C9C5BD;margin-bottom:6px}
+.lbs-row{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;border-bottom:1px solid rgba(255,253,244,.06)}
+.lbs-row:last-child{border-bottom:0}
+.lbs-name{font-size:14px;font-weight:700;color:#FFFDF4}
+.lbs-views{font-size:15px;font-weight:800;color:#FFFDF4;text-align:right}
+.lbs-meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:#A3A09A}
+.lbs-m{display:inline-flex;align-items:center;gap:5px}
+@media (min-width:761px){.lb-inner:has(.lb-stats){flex-direction:row !important;flex-wrap:nowrap;gap:28px !important}.lb-inner:has(.lb-stats) .lb-side{flex-direction:column;align-items:center;gap:14px}}
+@media (max-width:760px){.lb-inner:has(.lb-stats) .lb-media{height:54vh}.lb-inner:has(.lb-stats) .lb-side{flex-direction:column;align-items:center;gap:8px}.lb-stats{width:92vw;padding:14px 16px;flex-direction:row;flex-wrap:wrap;column-gap:14px}.lbs-top{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:8px;width:100%;padding-bottom:8px}.lbs-top .lbs-client{width:100%;margin-bottom:0}.lbs-top strong{font-size:30px}.lbs-row{flex:1 1 100%;padding:6px 0;grid-template-columns:auto auto 1fr}.lbs-meta{grid-column:auto;justify-content:flex-end;gap:10px;font-size:12px}.lbs-views{text-align:left}.reel-stat b{font-size:24px}.reel-stat{padding:40px 14px 12px}.reel-stat small{display:none}}
 .lb-vid{background:#000;object-fit:contain}
 .f34{aspect-ratio:3/4}.f35{aspect-ratio:1176/2000}
 .reel-car{position:absolute;top:12px;right:12px;z-index:1;display:inline-flex;align-items:center;gap:6px;background:rgba(26,26,26,.72);backdrop-filter:blur(6px);color:#FFFDF4;font-size:12px;font-weight:700;border-radius:999px;padding:5px 10px}
@@ -752,6 +795,42 @@ p{font-size:15.5px !important}
 </div>
 </div>
 </div>
+<div class="reveal" style="display: flex; flex-direction: column; gap: 18px">
+<p class="res-h">Și ce s-a schimbat la ei</p>
+<div class="res-row">
+<div class="res-card tilt3d">
+<span class="res-who">Shaorma Nation · Instagram</span>
+<div class="res-ba"><span class="res-before">328</span><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="res-after">1.037</span></div>
+<span class="res-what">urmăritori, în 6 luni de când lucrăm împreună</span>
+<span class="res-tag">de 3 ori mai mulți</span>
+</div>
+<div class="res-card tilt3d">
+<span class="res-who">Power Doner · Google</span>
+<div class="res-ba"><span class="res-before">3,1 ★</span><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="res-after">4,1 ★</span></div>
+<span class="res-what">nota pe Google, cu peste 120 de recenzii noi</span>
+<span class="res-tag">+1 stea întreagă</span>
+</div>
+</div>
+</div>
+<div class="camp reveal">
+<div class="camp-media">
+<video class="camp-vid" src="media/viral/14.mp4" poster="media/viral/14-p.webp" controls playsinline preload="none"></video>
+</div>
+<div class="camp-body">
+<span class="camp-chip">Exemplu real · Campanie Meta</span>
+<h3 class="disp camp-h">Power Doner:<br>45.000 de bihoreni în 20 de zile.</h3>
+<ol class="camp-steps">
+<li><span class="camp-n">1</span><div><strong>Ce voiam</strong><span>Să afle cât mai mulți bihoreni de Power Doner și să intre pe profilul lor.</span></div></li>
+<li><span class="camp-n">2</span><div><strong>Ce am făcut</strong><span>Un video scurt cu proprietarul, promovat 20 de zile în județul Bihor.</span></div></li>
+<li><span class="camp-n">3</span><div><strong>Ce a ieșit</strong>
+<div class="camp-stats">
+<div><b>45.000</b><span>de oameni au văzut reclama</span></div>
+<div><b>5.300</b><span>au intrat pe profil</span></div>
+<div><b>0,19 lei</b><span>a costat o vizită</span></div>
+</div></div></li>
+</ol>
+</div>
+</div>
 </section>
 
 <!-- CTA LA MIJLOC -->
@@ -952,8 +1031,47 @@ class DCLogic { constructor(props) { this.props = props || {}; this.state = {}; 
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { tab: 'video', metaOn: false, step: 0, manual: false, lb: -1, flipO: false, flipG: false, why: 0, whyManual: false };
+    this.state = { tab: 'viral', metaOn: false, step: 0, manual: false, lb: -1, flipO: false, flipG: false, why: 0, whyManual: false };
   }
+  // cifrele cresc de la 0 (sau de la valoarea „înainte”) când ajung pe ecran
+  countInit() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var SEL = '.reel-stat b, .camp-stats b, .res-after';
+    function parse(s) {
+      var m = /[\d.,]+/.exec(s || ''); if (!m) return null;
+      var raw = m[0], dec = raw.indexOf(',') >= 0 ? raw.split(',')[1].length : 0;
+      return { v: parseFloat(raw.replace(/\./g, '').replace(',', '.')), dec: dec, dots: raw.indexOf('.') >= 0, pre: s.slice(0, m.index), post: s.slice(m.index + raw.length) };
+    }
+    function fmt(P, v) {
+      var parts = v.toFixed(P.dec).split('.'), i = parts[0];
+      if (P.dots) i = i.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      return P.pre + i + (P.dec ? ',' + parts[1] : '') + P.post;
+    }
+    function run(el) {
+      var P = parse(el.textContent); if (!P) return;
+      var from = 0;
+      if (el.classList.contains('res-after')) { var b = el.parentNode.querySelector('.res-before'), B = b && parse(b.textContent); if (B) from = B.v; }
+      var t0 = performance.now(), D = 1600, fin = el.textContent; el.__cuRun = true;
+      el.textContent = fmt(P, from);
+      (function step(now) {
+        var k = Math.min(1, (now - t0) / D), e = 1 - Math.pow(1 - k, 3);
+        el.textContent = k < 1 ? fmt(P, from + (P.v - from) * e) : fin;
+        if (k < 1) requestAnimationFrame(step); else el.__cuRun = false;
+      })(t0);
+    }
+    function check() {
+      var W = window.innerWidth, H = window.innerHeight;
+      document.querySelectorAll(SEL).forEach(function (el) {
+        if (el.__cuRun || el.getAttribute('data-cu') === el.textContent) return;
+        var r = el.getBoundingClientRect();
+        if (!r.width || r.bottom < 0 || r.top > H * 0.92 || r.right < 0 || r.left > W) return;
+        el.setAttribute('data-cu', el.textContent);
+        run(el);
+      });
+    }
+    this._countT = setInterval(check, 150);
+  }
+
   // banda de la „Munca noastră”: merge singură, dar se poate trage, derula și muta cu săgețile
   reelInit() {
     var pos = -1, last = 0, first = null, hold = 0, raf = 0, drag = null, moved = false, SPEED = 42;
@@ -1030,6 +1148,7 @@ class Component extends DCLogic {
   componentDidMount() {
     var self = this;
     this.reelInit();
+    this.countInit();
     this._timer = setInterval(function () {
       if (!self.state.manual && self.state.lb < 0 && self._stepsVisible && !document.hidden) self.setState({ step: (self.state.step + 1) % 9 });
     }, 4000);
@@ -1113,6 +1232,7 @@ class Component extends DCLogic {
   }
   componentWillUnmount() {
     if (this._reelOff) this._reelOff();
+    clearInterval(this._countT);
     clearInterval(this._timer);
     window.removeEventListener('scroll', this._onScroll);
     window.removeEventListener('deviceorientation', this._onTilt);
@@ -1236,7 +1356,36 @@ class Component extends DCLogic {
     function item(cap, chip, label, fmt, tone, video, img, full) {
       return { client: '[client]', cap: cap, chip: chip, label: label, fmt: fmt, tone: tone, cls: 'reel tilt3d ' + fmt + ' ' + tone, video: !!video, img: img || '', full: full || img || '', hasImg: !!img, noImg: !img };
     }
+    var IC = {
+      l: 'M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z',
+      c: 'M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z',
+      s: 'M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13'
+    };
+    // cifre: [platformă, vizualizări, like, comentarii, distribuiri]; ce lipsește se lasă ''
+    function stats(it, client, total, rows) {
+      return Object.assign(it, {
+        hasStats: true, total: total, statClient: client,
+        stats: rows.map(function (r) {
+          return { name: r[0], views: r[1], meta: [['l', r[2]], ['c', r[3]], ['s', r[4]]].filter(function (m) { return m[1]; }).map(function (m) { return { icon: IC[m[0]], val: m[1] }; }) };
+        })
+      });
+    }
+    function vir(n, fmt) { return Object.assign(item('', '', 'video', fmt || 'f916', 't' + (n % 3 + 1), true, 'media/viral/' + n + '-t.webp', 'media/viral/' + n + '-p.webp'), { vid: 'media/viral/' + n + '.mp4' }); }
+    function vidItem(n) { return Object.assign(item('', '', 'video ' + n, 'f916', 't' + (n % 3 + 1), true, 'media/video/0' + n + '-t.webp', 'media/video/0' + n + '-p.webp'), { vid: 'media/video/0' + n + '.mp4' }); }
     var data = {
+      viral: [
+        stats(vir('05'), 'Shaorma Nation', '387K', [['Instagram', '387K', '', '', '']]),
+        stats(vir('07'), 'Shaorma Nation', '256K', [['Instagram', '256K', '', '', '']]),
+        stats(vir('12'), 'Power Doner', '244K', [['Facebook', '244K', '', '', '']]),
+        stats(vir('11'), 'Power Doner', '176,3K', [['TikTok', '176,3K', '', '', '']]),
+        stats(vir('08'), 'Shaorma Nation', '52,1K', [['Instagram', '52,1K', '', '', '']]),
+        stats(vir('09'), 'Shaorma Nation', '48,3K', [['Instagram', '48,3K', '', '', '']]),
+        stats(vir('06'), 'Shaorma Nation', '41,6K', [['Instagram', '41,6K', '', '', '']]),
+        stats(vir('02'), 'Violet Cafe', '33,6K', [['TikTok', '33,6K', '', '', '']]),
+        stats(vir('03', 'f23'), 'Violet Cafe', '27,4K', [['TikTok', '27,4K', '', '', '']]),
+        stats(vir('01'), 'Violet Cafe', '14,4K', [['TikTok', '14,4K', '', '', '']]),
+        stats(vir('13'), 'Power Doner', '14,3K', [['Facebook', '14,3K', '', '', '']])
+      ],
       video: [
         Object.assign(item('', '', 'video 1', 'f916', 't2', true, 'media/video/01-t.webp', 'media/video/01-p.webp'), { vid: 'media/video/01.mp4' }),
         Object.assign(item('', '', 'video 2', 'f916', 't3', true, 'media/video/02-t.webp', 'media/video/02-p.webp'), { vid: 'media/video/02.mp4' }),
@@ -1273,6 +1422,7 @@ class Component extends DCLogic {
       ]
     };
     var tabs = [
+      { id: 'viral', label: 'Cele mai văzute' },
       { id: 'video', label: 'Video' },
       { id: 'foto', label: 'Foto' },
       { id: 'grafica', label: 'Grafică' }
@@ -1297,6 +1447,7 @@ class Component extends DCLogic {
         img: it.full, imgCls: it.full && !it.vid ? 'lb-img' : 'lb-img lb-hide', vid: it.vid || '', hasVid: !!it.vid, phCls: it.full ? 'ph-label lb-hide' : 'ph-label',
         label: it.label, cap: it.cap, chip: it.chip, client: it.client,
         soundNote: it.video ? ', cu sunet' : '',
+        hasStats: !!it.hasStats, total: it.total || '', stats: it.stats || [], statClient: it.statClient || '',
         pos: (li + 1) + ' din ' + n
       };
     }
@@ -1521,7 +1672,7 @@ class Component extends DCLogic {
       last.tab = st.tab;
       $('.reel-track').innerHTML = V.feedLoop.map(function (p, i) {
         return '<button class="' + p.cls + '" data-open="' + i + '" aria-label="Deschide materialul">' +
-          (p.img ? '<img class="reel-img" src="' + p.img + '" alt="" loading="lazy" decoding="async" draggable="false">' : '<span class="ph-label">[Pune aici: ' + esc(p.label) + ']</span>') + (p.car ? '<span class="reel-car"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="8" width="13" height="13" rx="3"></rect><path d="M16 4H6a2 2 0 0 0-2 2v10"></path></svg>Carusel</span>' : '') + (p.video ? PLAY : '') + '</button>';
+          (p.img ? '<img class="reel-img" src="' + p.img + '" alt="" loading="lazy" decoding="async" draggable="false">' : '<span class="ph-label">[Pune aici: ' + esc(p.label) + ']</span>') + (p.hasStats ? '<span class="reel-stat"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path></svg><b>' + esc(p.total) + '</b><small>vizualizări</small></span>' : '') + (p.car ? '<span class="reel-car"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="8" y="8" width="13" height="13" rx="3"></rect><path d="M16 4H6a2 2 0 0 0-2 2v10"></path></svg>Carusel</span>' : '') + (p.video ? PLAY : '') + '</button>';
       }).join('');
     }
 
@@ -1535,7 +1686,7 @@ class Component extends DCLogic {
         slot.innerHTML = '<div class="lb" role="dialog" aria-modal="true" aria-label="Material deschis">' +
           '<button class="lb-back" aria-label="Închide" data-lb="close"></button>' +
           '<div class="lb-inner"><div class="' + b.cls + '">' + (b.vid ? '<video class="lb-img lb-vid" src="' + b.vid + '" poster="' + b.img + '" autoplay controls playsinline preload="auto"></video>' : b.img ? '<img class="lb-img" src="' + b.img + '" alt="">' : '<span class="ph-label">[' + esc(b.label) + ': aici pornește materialul real' + b.soundNote + ']</span>') + '</div>' +
-          '<div class="lb-side"><span class="lb-pos">' + b.pos + '</span></div></div>' +
+          '<div class="lb-side">' + (b.hasStats ? '<div class="lb-stats"><div class="lbs-top"><span class="lbs-client">' + esc(b.statClient) + '</span><strong>' + esc(b.total) + '</strong><span>vizualizări</span></div>' + b.stats.map(function (s) { return '<div class="lbs-row"><span class="lbs-name">' + esc(s.name) + '</span><span class="lbs-views">' + esc(s.views) + '</span><span class="lbs-meta">' + s.meta.map(function (m) { return '<span class="lbs-m"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="' + m.icon + '"></path></svg>' + esc(m.val) + '</span>'; }).join('') + '</span></div>'; }).join('') + '</div>' : '') + '<span class="lb-pos">' + b.pos + '</span></div></div>' +
           '<button class="lb-btn lb-x" aria-label="Închide" data-lb="close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>' +
           '<button class="lb-btn lb-prev" aria-label="Materialul anterior" data-lb="prev"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"></path></svg></button>' +
           '<button class="lb-btn lb-next" aria-label="Materialul următor" data-lb="next"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"></path></svg></button></div>';
